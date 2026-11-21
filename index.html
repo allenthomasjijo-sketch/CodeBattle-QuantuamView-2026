@@ -1,42 +1,228 @@
+
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title> Quantum View </title>
-    </head>
-    <body>
-        <h1 class="title"> Quantuam View</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum View</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1 class="title">Quantum <span>View</span></h1>
+
         <nav>
-            <a href=#About class="btns"> About us</a>
-            <a href=#Features class="btns">Features</a>
-            <a href=#Buy class="btns"> Buy stocks</a>
-            <a href=#Sell class="btns"> Sell Stocks</a>
+            <a href="#About" class="btns">About Us</a>
+            <a href="#Features" class="btns">Features</a>
+            <a href="#Buy" class="btns">Buy Stocks</a>
+            <a href="#Buy" class="btns">Sell Stocks</a>
         </nav>
-    </body>
+    </header>
+    
+    <section class="wallet">
+        <h2>Your Portfolio</h2>
+
+        <div class="portfolio-card">
+            <div>
+                <h3>Available Balance</h3>
+                <p id="balance">$1000.00</p>
+            </div>
+
+            <div>
+                <h3>Total Portfolio Value</h3>
+                <p id="total">$1000.00</p>
+            </div>
+        </div>
+    </section>
+
     <section id="About">
         <div class="card3">
-            <h2> About us</h2>
-            <div class="card2">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus, libero. Praesentium aspernatur et repellat dolorum accusantium laudantium accusamus hic quisquam! Veniam, quod quae nihil nesciunt qui placeat laboriosam reprehenderit eius!</p>
-            </div>
+            <h2>About Us</h2>
+            <p>
+                Quantum View is a virtual stock market simulation
+                that allows users to learn about investing, buying
+                and selling shares, and understanding how the
+                stock market works.
+            </p>
         </div>
     </section>
+
     <section id="Features">
-        <h2> Features</h2>
+        <h2>Our Features</h2>
+
         <div class="card-container">
+
             <div class="card">
                 <h3>Interactive Stock Trading</h3>
-                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores consequuntur delectus amet facere fuga nemo excepturi. Quod, cum id? Ipsum nemo rem et, totam molestiae deserunt sed veritatis inventore qui!</p>
+                <p>
+                    Buy and sell shares of different companies
+                    using virtual money.
+                </p>
             </div>
+
             <div class="card">
-                <h3>Interactive Stock Trading</h3>
-                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores consequuntur delectus amet facere fuga nemo excepturi. Quod, cum id? Ipsum nemo rem et, totam molestiae deserunt sed veritatis inventore qui!</p>
+                <h3>Market News</h3>
+                <p>
+                    Follow market updates and learn how news
+                    can affect stock prices.
+                </p>
             </div>
+
             <div class="card">
-                <h3>Interactive Stock Trading</h3>
-                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores consequuntur delectus amet facere fuga nemo excepturi. Quod, cum id? Ipsum nemo rem et, totam molestiae deserunt sed veritatis inventore qui!</p>
+                <h3>Portfolio Tracking</h3>
+                <p>
+                    Monitor your balance, owned shares, and
+                    total portfolio value.
+                </p>
             </div>
+
         </div>
     </section>
-    
+
+    <section id="Buy">
+        <h2>Stock Market</h2>
+
+        <div class="card-container">
+
+            <div class="stock-card">
+                <h3>ByteBurger</h3>
+                <p>Fast Food</p>
+                <h2>$20</h2>
+                <p>Owned: <span id="byteOwned">0</span></p>
+                <input type="number" id="byteQty" min="1" value="1">
+                <button onclick="trade('byte', 'buy')">Buy</button>
+                <button onclick="trade('byte', 'sell')">Sell</button>
+            </div>
+
+            <div class="stock-card">
+                <h3>GreenLeaf Farms</h3>
+                <p>Healthy Snacks</p>
+                <h2>$15</h2>
+                <p>Owned: <span id="greenOwned">0</span></p>
+                <input type="number" id="greenQty" min="1" value="1">
+                <button onclick="trade('green', 'buy')">Buy</button>
+                <button onclick="trade('green', 'sell')">Sell</button>
+            </div>
+
+            <div class="stock-card">
+                <h3>Zoomy Motors</h3>
+                <p>Electric Scooters</p>
+                <h2>$40</h2>
+                <p>Owned: <span id="zoomOwned">0</span></p>
+                <input type="number" id="zoomQty" min="1" value="1">
+                <button onclick="trade('zoom', 'buy')">Buy</button>
+                <button onclick="trade('zoom', 'sell')">Sell</button>
+            </div>
+
+            <div class="stock-card">
+                <h3>PixelPlay Games</h3>
+                <p>Video Games</p>
+                <h2>$30</h2>
+                <p>Owned: <span id="pixelOwned">0</span></p>
+                <input type="number" id="pixelQty" min="1" value="1">
+                <button onclick="trade('pixel', 'buy')">Buy</button>
+                <button onclick="trade('pixel', 'sell')">Sell</button>
+            </div>
+
+            <div class="stock-card">
+                <h3>RocketRide</h3>
+                <p>Space Tourism</p>
+                <h2>$60</h2>
+                <p>Owned: <span id="rocketOwned">0</span></p>
+                <input type="number" id="rocketQty" min="1" value="1">
+                <button onclick="trade('rocket', 'buy')">Buy</button>
+                <button onclick="trade('rocket', 'sell')">Sell</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="News">
+        <h2>Market News</h2>
+        <div class="card">
+            <p id="news">The market is open! Start trading.</p>
+        </div>
+    </section>
+
+    <p id="message"></p>
+
+    <footer>
+        <p>Quantum View | Virtual Stock Market Simulation</p>
+    </footer>
+
+    <script>
+        let balance = 1000;
+
+        let companies = {
+            byte: { price: 20, owned: 0 },
+            green: { price: 15, owned: 0 },
+            zoom: { price: 40, owned: 0 },
+            pixel: { price: 30, owned: 0 },
+            rocket: { price: 60, owned: 0 }
+        };
+
+        function trade(company, action) {
+            let stock = companies[company];
+            let input = document.getElementById(company + "Qty");
+            let quantity = Number(input.value);
+
+            if (!Number.isInteger(quantity) || quantity <= 0) {
+                document.getElementById("message").innerText =
+                    "Enter a valid number of shares.";
+                return;
+            }
+
+            let cost = stock.price * quantity;
+
+            if (action === "buy") {
+                if (cost > balance) {
+                    document.getElementById("message").innerText =
+                        "Not enough money!";
+                    return;
+                }
+
+                balance -= cost;
+                stock.owned += quantity;
+
+            } else {
+                if (quantity > stock.owned) {
+                    document.getElementById("message").innerText =
+                        "You do not own enough shares!";
+                    return;
+                }
+
+                balance += cost;
+                stock.owned -= quantity;
+            }
+
+            updateDisplay();
+
+            document.getElementById("message").innerText =
+                "Successfully " + action + "ed " + quantity +
+                " shares of " + company + "!";
+        }
+
+        function updateDisplay() {
+            let portfolio = balance;
+
+            for (let company in companies) {
+                let stock = companies[company];
+
+                document.getElementById(company + "Owned").innerText =
+                    stock.owned;
+
+                portfolio += stock.price * stock.owned;
+            }
+
+            document.getElementById("balance").innerText =
+                "$" + balance.toFixed(2);
+
+            document.getElementById("total").innerText =
+                "$" + portfolio.toFixed(2);
+        }
+    </script>
+
+</body>
 </html>
