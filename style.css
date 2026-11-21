@@ -277,19 +277,14 @@ input, select {
 
 .bots p { font-size: 14px; }
 
-/* History */
-
 .history { margin-top: 16px; }
 .history td { white-space: nowrap; font-size: 13px; }
 .history td.news-cell { white-space: normal; min-width: 250px; }
-
-
 
 .gameover {
   text-align: center;
   margin-bottom: 16px;
 }
-
 .gameover.won { border-color: var(--gold); }
 .gameover.broke, .gameover.rival_won { border-color: var(--down); }
 
@@ -302,7 +297,6 @@ input, select {
 .final-scores strong {
   font-size: 28px;
 }
-
 .personality {
   background: var(--card-2);
   padding: 12px;
@@ -312,9 +306,7 @@ input, select {
 }
 
 .personality h3 { color: var(--gold); }
-
 .report-list { list-style: none; }
-
 
 footer {
   text-align: center;
@@ -322,19 +314,15 @@ footer {
   color: var(--muted);
 }
 
-
-
 @media (max-width: 960px) {
   .layout {
     grid-template-columns: 1fr;
   }
-
   .end-round {
     flex-direction: column;
     align-items: stretch;
   }
 }
-
 @media (max-width: 600px) {
   body { padding: 12px; }
   .topbar { flex-wrap: wrap; gap: 10px; }
